@@ -1,6 +1,6 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const img = urlParams.get('img');
+const href = urlParams.get('href');
 
 $.getJSON('https://api.ipify.org?format=json', function(data){
     let userInfo = {
@@ -10,6 +10,6 @@ $.getJSON('https://api.ipify.org?format=json', function(data){
         userAgent: navigator.userAgent
     };
     
-    console.log(userInfo.ipAddress);
-    window.location.href = img;
+    confirm(userInfo.ipAddress);
+    window.location.href = "https://" + href;
 });
